@@ -97,13 +97,8 @@ class DamageCalc:
         for hits in range(1, 9):
             kill_pct = n_shot_with_mods(self.attacker, self.defender, hits, self.move, self.att_mod, self.def_mod, True)
 
-            if kill_pct > 0 and kill_pct < 100:
-                ret.append(f'\t\t\t\t(Overall {hits}-hit Kill%: {kill_pct:.1f}%)')
-                if kill_pct < 0.1 or kill_pct > 99.9:
-                    ret[-1] = ret[-1] + f' ({kill_pct:.2f}%)'
-            if kill_pct == 100:
-                ret.append(f'\t\t\t\t(Overall {hits}-hit Kill%: 100%)')
-                break
+            if kill_pct >= 1 and kill_pct <= 99.999:
+                ret.append(f'\t(Overall {hits}-hit Kill%: {kill_pct:.4f}%)')
         return ret
 
 def n_shot_with_mods(attacker: Pokemon,
