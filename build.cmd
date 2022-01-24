@@ -1,0 +1,1 @@
+pyinstaller -F route_parser.py

@@ -286,4 +286,4 @@ if __name__ == '__main__':
             route.write_file()
         except RouteException as e:
             print(f'Raised error: {e}')
-    input('Press any <ENTER> to exit...')
+    # input('Press any <ENTER> to exit...')
