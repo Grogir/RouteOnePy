@@ -39,8 +39,8 @@ class SingleBattle:
         '''Returns a shortened summary associated with verbosity = 1'''
 
         ret = []
-        ret.append(f'LVL {self.attacker.level} EXP NEEDED: {self.attacker.exp_to_next_level}/{self.attacker.exp_for_level}')
-        line = f'{self.attacker.level_name} vs {self.defender.level_name}'
+        # ret.append(f'\tLVL {self.attacker.level} EXP NEEDED: {self.attacker.exp_to_next_level}/{self.attacker.exp_for_level}')
+        line = f'\t{self.attacker.level_name} vs {self.defender.level_name}'
         line += f'          >>> EXP GIVEN: {self.defender.exp_given()}'
         ret.append(line)
         return ret
@@ -56,7 +56,7 @@ class SingleBattle:
         attacker, defender, a_mod, d_mod = self.attacker, self.defender, self.att_mod, self.def_mod
         if reverse:
             attacker, defender, a_mod, d_mod = self.defender, self.attacker, self.def_mod, self.att_mod
-        x = f'{attacker.name} ({attacker.stats_str})'
+        x = f'\t\t{attacker.name} ({attacker.stats_str})'
         if a_mod.has_bbs or a_mod.has_mods:
             x += f' {a_mod} -> ({a_mod.mod_stats_str(attacker)}'
         ret.append(f'{x}')
@@ -155,16 +155,16 @@ class Battle:
                     rc_data[name] = rc
 
             for name, fight in fights.items():
-                ret += f'\nVariation {name}:\n{fight}'
+                ret += f'\n\tVariation   {name}:\n{fight}'
 
             rcs = ''
             for name, rc in range_checks.items():
-                rcs += f'\nRange Check {name}: {rc:.5f}%'
+                rcs += f'\n\tRange Check {name}: {rc:.5f}%'
                 for turn in range(rc_data[name]['turns']):
-                    rcs += f'\n\tTurn #{turn+1}: '
+                    rcs += f'\n\t\tTurn #{turn+1}: '
                     rcs += f'Move: {rc_data[name]["moves"][turn].name}'
-                    rcs += f'\n\t\tatt_mod: {rc_data[name]["att_mods"][turn]}'
-                    rcs += f'\n\t\tdef_mod: {rc_data[name]["def_mods"][turn]}'
+                    rcs += f'\n\t\t\tatt_mod: {rc_data[name]["att_mods"][turn]}'
+                    rcs += f'\n\t\t\tdef_mod: {rc_data[name]["def_mods"][turn]}'
             if rcs:
                 ret += rcs + '\n\n'
 
@@ -178,7 +178,7 @@ class Battle:
 
             poke.battle(self.pokemon, self.participants)
 
-        ret = ret.strip()
+        ret = '\t'+ret.strip()
 
         if self.verbosity:
             details = f'{self.opponent.level_name}' if self.wild else f'{self.opponent}'

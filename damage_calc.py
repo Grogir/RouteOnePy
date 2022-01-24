@@ -61,7 +61,7 @@ class DamageCalc:
         '''
         ret = []
 
-        line = f'{self.move.name}'
+        line = f'\t\t\t{self.move.name}'
         max_dmg = self.max_damage()
         max_crit_dmg = self.max_damage(True)
 
@@ -88,7 +88,7 @@ class DamageCalc:
         )
 
         for name, rolls in zip(['Normal', 'Crit'], [dmg_rolls, crit_dmg_rolls]):
-            line = f'\t{name} rolls: '
+            line = f'\t\t\t\t{name} rolls: '
             for roll, frequency in rolls.items():
                 line += f'{roll}x{frequency}, '
             line = line.strip(', ')
@@ -97,8 +97,13 @@ class DamageCalc:
         for hits in range(1, 9):
             kill_pct = n_shot_with_mods(self.attacker, self.defender, hits, self.move, self.att_mod, self.def_mod, True)
 
-            if kill_pct >= 1 and kill_pct <= 99.999:
-                ret.append(f'\t(Overall {hits}-hit Kill%: {kill_pct:.4f}%)')
+            if kill_pct > 0 and kill_pct < 100:
+                ret.append(f'\t\t\t\t(Overall {hits}-hit Kill%: {kill_pct:.1f}%)')
+                if kill_pct < 0.1 or kill_pct > 99.9:
+                    ret[-1] = ret[-1] + f' ({kill_pct:.2f}%)'
+            if kill_pct == 100:
+                ret.append(f'\t\t\t\t(Overall {hits}-hit Kill%: 100%)')
+                break
         return ret
 
 def n_shot_with_mods(attacker: Pokemon,
