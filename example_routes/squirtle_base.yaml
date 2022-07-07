@@ -13,7 +13,7 @@ route:
         variations:
             all:
                 good_att:
-                    ivs: 0xffff
+                    ivs: 0xFFFF
                     def_mod:
                         stages: 0/-1/0/0
                 bad_att:
@@ -21,7 +21,7 @@ route:
                     def_mod:
                         stages: 0/-1/0/0
                 growl_good_att:
-                    ivs: 0xffff
+                    ivs: 0xFFEF
                     att_mod:
                         stages: -1/0/0/0
                     def_mod:
@@ -37,8 +37,6 @@ route:
         wild_ivs: 0x0000
         variations:
             all:
-                avg_pidgey:
-                    wild_ivs: 0x9888
                 god_pidgey:
                     wild_ivs: 0xffff
     - wild:
@@ -47,75 +45,35 @@ route:
         split: 0
         variations:
             all:
-                10 Attack 14/7 Rat:
-                    ivs: 0x0000
+                good_att_bad_rat:
+                    ivs: 0xffff
                     wild_ivs: 0x0000
-                10 Attack 14/7 Rat Tail Whip:
-                    ivs: 0x0000
+                good_att_bad_rat_tw:
+                    ivs: 0xffff
                     wild_ivs: 0x0000
                     def_mod:
                         stages: 0/-1/0/0
-                10 Attack 15/7 Rat:
-                    ivs: 0x0000
-                    wild_ivs: 0x9888
-                10 Attack 15/7 Rat Tail Whip:
-                    ivs: 0x0000
-                    wild_ivs: 0x9888
-                    def_mod:
-                        stages: 0/-1/0/0
-                10 Attack 15/8 Rat:
-                    ivs: 0x0000
+                good_att_good_rat:
+                    ivs: 0xffff
                     wild_ivs: 0xffff
-                10 Attack 15/8 Rat Tail Whip:
-                    ivs: 0x0000
+                good_att_good_rat_tw:
+                    ivs: 0xffff
                     wild_ivs: 0xffff
                     def_mod:
                         stages: 0/-1/0/0
-                11 Attack 14/7 Rat:
-                    ivs: 0x8888
+                bad_att_bad_rat:
+                    ivs: 0x0000
                     wild_ivs: 0x0000
-                11 Attack 14/7 Rat Tail Whip:
-                    ivs: 0x8888
+                bad_att_bad_rat_tw:
+                    ivs: 0x0000
                     wild_ivs: 0x0000
                     def_mod:
                         stages: 0/-1/0/0
-                11 Attack 15/7 Rat:
-                    ivs: 0x8888
-                    wild_ivs: 0x9888
-                11 Attack 15/7 Rat Tail Whip:
-                    ivs: 0x8888
-                    wild_ivs: 0x9888
-                    def_mod:
-                        stages: 0/-1/0/0
-                11 Attack 15/8 Rat:
-                    ivs: 0x8888
+                bad_att_good_rat:
+                    ivs: 0x0000
                     wild_ivs: 0xffff
-                11 Attack 15/8 Rat Tail Whip:
-                    ivs: 0x8888
-                    wild_ivs: 0xffff
-                    def_mod:
-                        stages: 0/-1/0/0
-                12 Attack 14/7 Rat:
-                    ivs: 0xffff
-                    wild_ivs: 0x0000
-                12 Attack 14/7 Rat Tail Whip:
-                    ivs: 0xffff
-                    wild_ivs: 0x0000
-                    def_mod:
-                        stages: 0/-1/0/0
-                12 Attack 15/7 Rat:
-                    ivs: 0xffff
-                    wild_ivs: 0x9888
-                12 Attack 15/7 Rat Tail Whip:
-                    ivs: 0xffff
-                    wild_ivs: 0x9888
-                    def_mod:
-                        stages: 0/-1/0/0
-                12 Attack 15/8 Rat:
-                    ivs: 0xffff
-                    wild_ivs: 0xffff
-                12 Attack 15/8 Rat Tail Whip:
-                    ivs: 0xffff
+                bad_att_good_rat_tw:
+                    ivs: 0x0000
                     wild_ivs: 0xffff
                     def_mod:
                         stages: 0/-1/0/0
@@ -129,11 +87,11 @@ route:
                     ivs: 0xffff
                     def_mod:
                         stages: 0/-2/0/0
-                bad Attack 2:
+                bad_att_2:
                     ivs: 0x0000
                     def_mod:
                         stages: 0/-2/0/0
-                bad Attack 3:
+                bad_att_3:
                     ivs: 0x0000
                     def_mod:
                         stages: 0/-3/0/0

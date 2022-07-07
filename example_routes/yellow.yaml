@@ -1,0 +1,78 @@
+config:
+    game: y
+    species: nidoranm
+    level: 6
+    ivs: 0xFBEF
+    default_verbosity: 2
+    starting_money: 265
+    output: 'yellow_output.txt'
+
+route:
+    - fight:
+        id: 0x39E67 # bc1
+        def_mod:
+            1:
+                stages: 0/-1/0/0
+            2:
+                stages: 0/-2/0/0
+    - learn move: horn attack
+    - fight:
+        id: 0x39E6B # bc2
+    - fight:
+        id: 0x39E70 # bc3
+    - fight:
+        id: 0x39F17 # light year
+        def_mod:
+            1:
+                stages: 0/-1/0/0
+            2:
+                stages: 0/-2/0/0
+    - learn move: double kick
+    - fight:
+        id: 0x3A454 # brock
+        def_mod:
+            2:
+                stages: 0/-2/0/0
+    - fight:
+        id: 0x39E73 # bc1
+        variations:
+            1:
+                BB:
+                    att_mod:
+                        bbs: 1/0/0/0
+            3:
+                BB:
+                    att_mod:
+                        bbs: 1/0/0/0
+    - fight:
+        id: 0x39E2F # shorts
+    - fight:
+        id: 0x39E78 # bc2
+        variations:
+            2:
+                Harden:
+                    def_mod:
+                        stages: 0/1/0/0
+                BB:
+                    att_mod:
+                        bbs: 1/0/0/0
+                BB+Harden:
+                    att_mod:
+                        bbs: 1/0/0/0
+                    def_mod:
+                        stages: 0/1/0/0
+            4:
+                Harden:
+                    def_mod:
+                        stages: 0/1/0/0
+                BB:
+                    att_mod:
+                        bbs: 1/0/0/0
+                BB+Harden:
+                    att_mod:
+                        bbs: 1/0/0/0
+                    def_mod:
+                        stages: 0/1/0/0
+    - evolve: nidorino
+    - fight:
+        id: 0x39E7E # bc3

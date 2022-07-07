@@ -9,8 +9,9 @@
             "type": "python",
             "request": "launch",
             "program": "route_parser.py",
+            "args": ["example_routes\\yellow.yaml"],
             // "args": ["example_routes\\red.yaml"],
-            "args": ["example_routes\\squirtle.yaml"],
+            // "args": ["example_routes\\squirtle.yaml"],
             "console": "integratedTerminal"
         }
     ]

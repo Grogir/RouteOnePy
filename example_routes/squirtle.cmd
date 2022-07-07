@@ -1,1 +1,1 @@
-..\dist\route_parser squirtle.yaml
+..\route_parser squirtle.yaml

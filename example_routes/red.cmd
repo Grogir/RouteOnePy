@@ -1,1 +1,1 @@
-..\dist\route_parser red.yaml
+..\route_parser red.yaml
